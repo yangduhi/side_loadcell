@@ -2,49 +2,33 @@
 
 Side/load-cell analysis workspace split from `D:\vscode\nhtsa_metadata_deformation`.
 
-## Imported Databases
+## Source Inputs
 
-- `data/refactor_validation_filter_ready_2026-05-07.sqlite`
-  - Source: `D:\vscode\nhtsa_metadata\data\refactor_validation_filter_ready_2026-05-07.sqlite`
-  - Purpose: full 2011+ metadata DB with load-cell classification read model.
-- `data/deformation_features.sqlite`
-  - Source: `D:\vscode\nhtsa_metadata_deformation\data\deformation_features.sqlite`
-  - Purpose: derived MDCA deformation features.
-- `data/deformation_review.sqlite`
-  - Source: `D:\vscode\nhtsa_metadata_deformation\outputs\deformation_review.sqlite`
-  - Purpose: compact deformation review DB.
-- `data/side_loadcell_seed.sqlite`
-  - Purpose: small derived seed DB for side/load-cell overlap summaries and test list.
-- `data/side_pole_vehicle_specs_2026-05-07.sqlite`
-  - Source: `D:\vscode\nhtsa_metadata\data\refactor_validation_filter_ready_2026-05-07.sqlite`
-  - Purpose: vehicle specifications for the 588 side-pole load-cell tests.
+- `D:\vscode\nhtsa_metadata\data\refactor_validation_filter_ready_2026-05-07.sqlite`
+  - External source DB used by `scripts\build_side_pole_analysis_ready.py`.
+  - Not copied into this project.
+- `data/side_loadcell_filtered_tests.csv`
+  - Authoritative 555-row filtered scope source.
+- `data/side_pole_load_cell_channel_availability_2026-05-07.csv`
+  - Side-pole availability surface used to keep 554 analysis rows and exclude `15452`.
+- `data/side_pole_load_cell_and_acceleration_channel_names_2026-05-07.json`
+  - Metadata-derived channel inventory source.
+
+## Final Outputs
+
 - `data/side_pole_analysis_ready_2026-05-07.sqlite`
   - Source scope: `data/side_loadcell_filtered_tests.csv`
   - Purpose: final 554-test analysis-ready DB with vehicle specs, channel inventory, QC, and download links.
 - `data/side_pole_analysis_ready_2026-05-07.json`
   - Purpose: JSON export from the analysis-ready DB. Includes data package/report links only.
 
-## Imported Reference Material
-
-- `docs/deformation_source_db_contract.md`
-- `docs/mdca_methodology.md`
-- `docs/deformation_operations.md`
-- `docs/NHTSA_side_impact_project_plan.docx`
-- `reference/deformation_outputs/`
-- `reference/deformation_review_bundle/`
-- `reference/load_cell_classification/`
-
-## Current Seed Scope
+## Current Scope
 
 - Full metadata tests: 3,900
 - Load-cell classified tests: 1,137
-- Side-pole load-cell vehicle specification rows: 588
-- Side-family load-cell overlap rows in seed DB: 589
 - Final filtered side-pole analysis rows: 554
 - Excluded filtered non-side-pole row: `15452`
 - Excluded research rows: 34
-- Deformation feature rows: 1,944
-- Deformation profile points: 11,612
 
 Default verification is local and read-only. No live NHTSA API call is required.
 
