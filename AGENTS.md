@@ -32,15 +32,12 @@ NHTSA 측면 폴 충돌 시험 데이터를 활용하여 로드셀 배리어 for
 
 ```text
 data/side_loadcell_filtered_tests.csv       # 555-row filtered scope source
-data/refactor_validation_filter_ready_2026-05-07.sqlite
-                                          # full metadata DB with load-cell classification
+D:\vscode\nhtsa_metadata\data\refactor_validation_filter_ready_2026-05-07.sqlite
+                                          # external full metadata DB with load-cell classification
 data/side_pole_analysis_ready_2026-05-07.sqlite
                                           # 554-test analysis-ready source of truth
-data/raw/time_history/                    # future local NHTSA waveform files
-data/raw/assets/                          # future local photos, videos, reports
-data/processed/                           # cohort, inventory, channel dictionary
-data/derived/                             # metrics, energy, benchmark tables
-artifacts/harness/                        # validation JSON and QA logs
+artifacts/harness/                        # validation JSON, QA logs, generated cohort surfaces
+outputs/                                  # future analysis outputs outside the source data bundle
 reports/                                  # Markdown/DOCX/dashboard exports
 .agents/                                  # role-based agent instructions
 .skills/                                  # repeatable procedures

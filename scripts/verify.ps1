@@ -12,7 +12,7 @@ if (-not (Test-Path $Python)) {
     $Python = "python"
 }
 
-New-Item -ItemType Directory -Force -Path "artifacts\harness", "data\processed", "reports" | Out-Null
+New-Item -ItemType Directory -Force -Path "artifacts\harness", "reports" | Out-Null
 
 $SourceDb = $env:NHTSA_SIDE_LOADCELL_METADATA_DB_PATH
 if (-not $SourceDb) {
@@ -48,14 +48,14 @@ Invoke-PythonStep "validate baseline" @(
 Invoke-PythonStep "build cohort" @(
     ".harness\scripts\build_cohort.py",
     "--csv", "data\side_loadcell_filtered_tests.csv",
-    "--out", "data\processed\side_pole_vtp_cohort.csv",
-    "--exclusions", "data\processed\excluded_tests.csv",
+    "--out", "artifacts\harness\side_pole_vtp_cohort.csv",
+    "--exclusions", "artifacts\harness\excluded_tests.csv",
     "--summary", "artifacts\harness\cohort_summary.json"
 )
 
 Invoke-PythonStep "profile metadata" @(
     ".harness\scripts\profile_metadata.py",
-    "--cohort", "data\processed\side_pole_vtp_cohort.csv",
+    "--cohort", "artifacts\harness\side_pole_vtp_cohort.csv",
     "--out", "artifacts\harness\metadata_profile.json"
 )
 

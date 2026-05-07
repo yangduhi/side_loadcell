@@ -27,8 +27,8 @@ writes `reports\project_readiness_report.md`, and runs `.harness/tests`.
 ## Source Inputs
 
 - `D:\vscode\nhtsa_metadata\data\refactor_validation_filter_ready_2026-05-07.sqlite`
-  - Original source path for the local copy at `data/refactor_validation_filter_ready_2026-05-07.sqlite`.
-  - Used by `scripts\build_side_pole_analysis_ready.py`.
+  - External metadata DB used by `scripts\build_side_pole_analysis_ready.py`.
+  - Not copied into this project.
 - `data/side_loadcell_filtered_tests.csv`
   - Authoritative 555-row filtered scope source.
 - `data/side_pole_load_cell_channel_availability_2026-05-07.csv`
