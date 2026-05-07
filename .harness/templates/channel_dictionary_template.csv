@@ -1,0 +1,1 @@
+test_no,local_path,raw_channel_code,raw_channel_label,normalized_channel_code,measurement_type,sensor_location_code,sensor_location_label,axis,raw_unit,normalized_unit,sample_rate_hz,time_step_sec,cfc_class,polarity,qa_status,qa_notes

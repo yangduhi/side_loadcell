@@ -1,0 +1,143 @@
+version: 0.1.0
+
+source_csv:
+  path: data/source/side_loadcell_filtered_tests.csv
+  required_columns:
+    test_no: integer_string
+    model_year: nullable_number
+    make: string
+    model: string
+    body_style: string
+    crash_type: string
+    crash_type_rule: string
+    test_config_code: string
+    test_config_label: string
+    impact_speed_value: number
+    impact_speed_unit: string
+    load_cell_barrier_family: string
+    load_cell_barrier_classification_id: string
+    load_cell_barrier_config_version: string
+    test_weight_kg: nullable_number
+    curb_weight_kg: nullable_number
+    length_mm: nullable_number
+    width_mm: nullable_number
+    wheelbase_mm: nullable_number
+    vax_crush_distance_mm: nullable_number
+
+sqlite_metadata:
+  path: data/source/nhtsa_gui.sqlite
+  required_tables:
+    - tests
+    - vehicles
+    - barriers
+    - files
+    - instrumentation_channels
+    - injury_metrics
+    - intrusions
+    - occupants
+    - restraints
+    - source_payloads
+  known_empty_tables_at_project_start:
+    files: 0
+    instrumentation_channels: 0
+    injury_metrics: 0
+    intrusions: 0
+
+raw_asset_inventory:
+  path: data/processed/raw_asset_inventory.csv
+  required_columns:
+    - test_no
+    - asset_kind
+    - file_role
+    - source_url
+    - local_path
+    - file_ext
+    - size_bytes
+    - checksum_sha256
+    - status
+    - parser_hint
+    - qa_notes
+  allowed_status:
+    - present
+    - missing
+    - downloaded
+    - failed
+    - skipped
+    - unknown
+
+channel_dictionary:
+  path: data/processed/channel_dictionary.csv
+  required_columns:
+    - test_no
+    - local_path
+    - raw_channel_code
+    - raw_channel_label
+    - normalized_channel_code
+    - measurement_type
+    - sensor_location_code
+    - sensor_location_label
+    - axis
+    - raw_unit
+    - normalized_unit
+    - sample_rate_hz
+    - time_step_sec
+    - cfc_class
+    - polarity
+    - qa_status
+    - qa_notes
+  allowed_measurement_type:
+    - barrier_force
+    - vehicle_acceleration
+    - displacement
+    - velocity
+    - unknown
+
+loadcell_metrics:
+  path: data/derived/loadcell_metrics.csv
+  required_columns:
+    - test_no
+    - run_id
+    - metric_version
+    - channel_code
+    - cell_id
+    - peak_force_n
+    - time_to_peak_ms
+    - impulse_n_s
+    - force_duration_ms
+    - filter_applied
+    - qa_status
+    - qa_notes
+
+vehicle_deceleration_metrics:
+  path: data/derived/vehicle_deceleration_metrics.csv
+  required_columns:
+    - test_no
+    - run_id
+    - metric_version
+    - channel_code
+    - sensor_location_code
+    - axis
+    - peak_accel_mps2
+    - delta_v_mps
+    - relative_displacement_m
+    - drift_correction_method
+    - filter_applied
+    - qa_status
+    - qa_notes
+
+member_energy_estimates:
+  path: data/derived/member_energy_estimates.csv
+  required_columns:
+    - test_no
+    - run_id
+    - metric_version
+    - member_id
+    - member_label
+    - energy_j
+    - energy_ratio
+    - specific_energy_j_per_kg
+    - crush_normalized_energy_j_per_mm
+    - estimate_method
+    - confidence
+    - qa_status
+    - assumption_notes

@@ -1,0 +1,404 @@
+{
+  "schema_version": "0.1.0",
+  "generated_at_utc": "2026-05-07T04:01:31.325487+00:00",
+  "cohort_path": "data/processed/side_pole_vtp_cohort.csv",
+  "row_count": 554,
+  "columns": [
+    "test_no",
+    "model_year",
+    "make",
+    "model",
+    "body_style",
+    "crash_type",
+    "crash_type_rule",
+    "test_config_code",
+    "test_config_label",
+    "impact_speed_value",
+    "impact_speed_unit",
+    "load_cell_barrier_family",
+    "load_cell_barrier_classification_id",
+    "load_cell_barrier_config_version",
+    "test_weight_kg",
+    "curb_weight_kg",
+    "length_mm",
+    "width_mm",
+    "wheelbase_mm",
+    "vax_crush_distance_mm"
+  ],
+  "missing_by_column": {
+    "test_no": 0,
+    "model_year": 0,
+    "make": 0,
+    "model": 0,
+    "body_style": 0,
+    "crash_type": 0,
+    "crash_type_rule": 0,
+    "test_config_code": 0,
+    "test_config_label": 0,
+    "impact_speed_value": 0,
+    "impact_speed_unit": 0,
+    "load_cell_barrier_family": 0,
+    "load_cell_barrier_classification_id": 0,
+    "load_cell_barrier_config_version": 0,
+    "test_weight_kg": 0,
+    "curb_weight_kg": 18,
+    "length_mm": 0,
+    "width_mm": 0,
+    "wheelbase_mm": 0,
+    "vax_crush_distance_mm": 0
+  },
+  "numeric_summary": {
+    "model_year": {
+      "count": 554,
+      "min": 2011.0,
+      "p25": 2014.0,
+      "median": 2017.0,
+      "p75": 2021.0,
+      "max": 2026.0,
+      "mean": 2017.5505415162454
+    },
+    "impact_speed_value": {
+      "count": 554,
+      "min": 30.76,
+      "p25": 32.08,
+      "median": 32.2,
+      "p75": 32.3175,
+      "max": 32.95,
+      "mean": 32.20530685920578
+    },
+    "test_weight_kg": {
+      "count": 554,
+      "min": 993.0,
+      "p25": 1580.25,
+      "median": 1795.5,
+      "p75": 2111.0,
+      "max": 3311.0,
+      "mean": 1880.3393501805053
+    },
+    "curb_weight_kg": {
+      "count": 536,
+      "min": 0.0,
+      "p25": 1460.0,
+      "median": 1664.0,
+      "p75": 1951.25,
+      "max": 3134.0,
+      "mean": 1722.5597014925372
+    },
+    "length_mm": {
+      "count": 554,
+      "min": 2718.0,
+      "p25": 4551.5,
+      "median": 4779.5,
+      "p75": 5003.25,
+      "max": 6362.0,
+      "mean": 4822.954873646209
+    },
+    "width_mm": {
+      "count": 554,
+      "min": 1456.0,
+      "p25": 1785.0,
+      "median": 1836.0,
+      "p75": 1920.0,
+      "max": 2087.0,
+      "mean": 1853.1949458483755
+    },
+    "wheelbase_mm": {
+      "count": 554,
+      "min": 1869.0,
+      "p25": 2688.5,
+      "median": 2796.0,
+      "p75": 2959.5,
+      "max": 5969.0,
+      "mean": 2885.572202166065
+    },
+    "vax_crush_distance_mm": {
+      "count": 554,
+      "min": 149.0,
+      "p25": 313.0,
+      "median": 348.0,
+      "p75": 395.0,
+      "max": 699.0,
+      "mean": 354.87003610108303
+    }
+  },
+  "categorical_top_counts": {
+    "make": [
+      {
+        "value": "FORD",
+        "count": 62
+      },
+      {
+        "value": "TOYOTA",
+        "count": 62
+      },
+      {
+        "value": "CHEVROLET",
+        "count": 49
+      },
+      {
+        "value": "NISSAN",
+        "count": 43
+      },
+      {
+        "value": "KIA",
+        "count": 35
+      },
+      {
+        "value": "HYUNDAI",
+        "count": 35
+      },
+      {
+        "value": "HONDA",
+        "count": 29
+      },
+      {
+        "value": "MAZDA",
+        "count": 18
+      },
+      {
+        "value": "JEEP",
+        "count": 17
+      },
+      {
+        "value": "LEXUS",
+        "count": 17
+      },
+      {
+        "value": "ACURA",
+        "count": 16
+      },
+      {
+        "value": "VOLKSWAGEN",
+        "count": 16
+      },
+      {
+        "value": "DODGE",
+        "count": 15
+      },
+      {
+        "value": "SUBARU",
+        "count": 15
+      },
+      {
+        "value": "BUICK",
+        "count": 13
+      },
+      {
+        "value": "CADILLAC",
+        "count": 12
+      },
+      {
+        "value": "MITSUBISHI",
+        "count": 12
+      },
+      {
+        "value": "AUDI",
+        "count": 12
+      },
+      {
+        "value": "BMW",
+        "count": 10
+      },
+      {
+        "value": "RAM",
+        "count": 9
+      }
+    ],
+    "model": [
+      {
+        "value": "PRIUS",
+        "count": 6
+      },
+      {
+        "value": "TACOMA",
+        "count": 6
+      },
+      {
+        "value": "COROLLA",
+        "count": 5
+      },
+      {
+        "value": "F150 SUPERCREW",
+        "count": 5
+      },
+      {
+        "value": "F150 SUPERCAB",
+        "count": 5
+      },
+      {
+        "value": "SORENTO",
+        "count": 5
+      },
+      {
+        "value": "TUCSON",
+        "count": 5
+      },
+      {
+        "value": "ELANTRA",
+        "count": 5
+      },
+      {
+        "value": "EXPEDITION",
+        "count": 5
+      },
+      {
+        "value": "SANTA FE",
+        "count": 5
+      },
+      {
+        "value": "CIVIC",
+        "count": 5
+      },
+      {
+        "value": "CR-V",
+        "count": 5
+      },
+      {
+        "value": "SILVERADO 1500",
+        "count": 5
+      },
+      {
+        "value": "MALIBU",
+        "count": 5
+      },
+      {
+        "value": "FORTE",
+        "count": 4
+      },
+      {
+        "value": "MUSTANG",
+        "count": 4
+      },
+      {
+        "value": "MAXIMA",
+        "count": 4
+      },
+      {
+        "value": "SPORTAGE",
+        "count": 4
+      },
+      {
+        "value": "SILVERADO2500",
+        "count": 4
+      },
+      {
+        "value": "TUNDRA",
+        "count": 4
+      }
+    ],
+    "body_style": [
+      {
+        "value": "UTILITY VEHICLE",
+        "count": 243
+      },
+      {
+        "value": "FOUR DOOR SEDAN",
+        "count": 154
+      },
+      {
+        "value": "4 DOOR PICKUP",
+        "count": 44
+      },
+      {
+        "value": "FIVE DOOR HATCHBACK",
+        "count": 40
+      },
+      {
+        "value": "EXTENDED CAB PICKUP",
+        "count": 22
+      },
+      {
+        "value": "TWO DOOR COUPE",
+        "count": 17
+      },
+      {
+        "value": "MINIVAN",
+        "count": 15
+      },
+      {
+        "value": "THREE DOOR HATCHBACK",
+        "count": 5
+      },
+      {
+        "value": "TRUCK",
+        "count": 3
+      },
+      {
+        "value": "STATION WAGON",
+        "count": 3
+      },
+      {
+        "value": "VAN",
+        "count": 2
+      },
+      {
+        "value": "PICKUP TRUCK",
+        "count": 2
+      },
+      {
+        "value": "THREE DOOR COUPE",
+        "count": 1
+      },
+      {
+        "value": "TWO DOOR SEDAN",
+        "count": 1
+      },
+      {
+        "value": "CONVERTIBLE",
+        "count": 1
+      },
+      {
+        "value": "FOUR DOOR PICKUP",
+        "count": 1
+      }
+    ],
+    "crash_type": [
+      {
+        "value": "NEW CAR ASSESSMENT TEST",
+        "count": 395
+      },
+      {
+        "value": "OPTIONAL NEW CAR ASSESSMENT TEST",
+        "count": 151
+      },
+      {
+        "value": "VALIDATION NEW CAR ASSESSMENT TEST",
+        "count": 5
+      },
+      {
+        "value": "Validation New Car Assessment Test",
+        "count": 3
+      }
+    ],
+    "test_config_code": [
+      {
+        "value": "VTP",
+        "count": 554
+      }
+    ],
+    "test_config_label": [
+      {
+        "value": "VEHICLE INTO POLE",
+        "count": 554
+      }
+    ],
+    "load_cell_barrier_family": [
+      {
+        "value": "side_pole_load_cell_barrier",
+        "count": 554
+      }
+    ],
+    "load_cell_barrier_classification_id": [
+      {
+        "value": "side_pole_load_cell_8",
+        "count": 554
+      }
+    ],
+    "impact_speed_unit": [
+      {
+        "value": "km/h",
+        "count": 554
+      }
+    ]
+  }
+}

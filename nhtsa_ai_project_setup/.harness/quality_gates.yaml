@@ -1,0 +1,80 @@
+version: 0.1.0
+
+gates:
+  G0_metadata_baseline:
+    owner: data_contract_auditor
+    required_for: all
+    pass_conditions:
+      - CSV required columns are present.
+      - CSV source row count is 555.
+      - test_no is unique in CSV.
+      - test_no 15452 exists and is excluded.
+      - Recommended cohort count is 554.
+      - SQLite required tables exist.
+    known_blockers:
+      - SQLite files table is 0 at project start.
+      - SQLite instrumentation_channels table is 0 at project start.
+
+  G1_raw_asset_inventory:
+    owner: raw_time_history_ingestion
+    required_for:
+      - channel_dictionary
+      - signal_processing
+    pass_conditions:
+      - raw_asset_inventory.csv exists.
+      - Every cohort test_no has an inventory row or explicit missing status.
+      - raw signal coverage is reported.
+      - checksum is recorded for local files.
+
+  G2_channel_dictionary:
+    owner: channel_dictionary_normalizer
+    required_for:
+      - signal_processing
+    pass_conditions:
+      - channel_dictionary.csv exists.
+      - All usable channels have measurement_type, unit, axis, sample_rate_hz.
+      - barrier_force channels are distinguishable from vehicle_acceleration channels.
+      - unit conversion to project standard units is possible.
+
+  G3_signal_qa:
+    owner: signal_processing_qa
+    required_for:
+      - metrics
+      - energy_mapping
+    pass_conditions:
+      - time vector monotonicity is verified.
+      - baseline correction window is documented.
+      - filtering metadata is recorded.
+      - time-zero method is recorded.
+      - saturated or unusable channels are excluded.
+
+  G4_metrics:
+    owner: signal_processing_qa
+    required_for:
+      - benchmarking
+      - reporting
+    pass_conditions:
+      - loadcell_metrics.csv schema is valid.
+      - vehicle_deceleration_metrics.csv schema is valid.
+      - metrics include run_id and metric_version.
+      - qa_status is not missing.
+
+  G5_energy_mapping:
+    owner: loadcell_energy_mapper
+    required_for:
+      - member_energy_reporting
+    pass_conditions:
+      - member_energy_estimates.csv schema is valid.
+      - energy estimates are labeled engineering_estimate.
+      - confidence is high, medium, low, or blocked.
+      - cell-to-zone/member mapping assumptions are documented.
+
+  G6_benchmark_reporting:
+    owner: report_dashboard_builder
+    required_for:
+      - final_report
+    pass_conditions:
+      - Benchmark groups include sample counts and coverage counts.
+      - Small-n groups are not ranked.
+      - Reports include known limitations and raw coverage.
+      - Harness validation artifacts are referenced.

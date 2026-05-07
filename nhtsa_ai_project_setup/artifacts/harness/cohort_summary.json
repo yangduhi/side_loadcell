@@ -1,0 +1,188 @@
+{
+  "schema_version": "0.1.0",
+  "generated_at_utc": "2026-05-07T04:01:23.304015+00:00",
+  "source_csv": "data/source/side_loadcell_filtered_tests.csv",
+  "cohort_csv": "data/processed/side_pole_vtp_cohort.csv",
+  "exclusions_csv": "data/processed/excluded_tests.csv",
+  "source_rows": 555,
+  "recommended_cohort_rows": 554,
+  "excluded_rows": 1,
+  "expected_recommended_cohort_rows": 554,
+  "status": "pass",
+  "filters": {
+    "crash_type_rule": "side",
+    "test_config_code": "VTP",
+    "test_config_label": "VEHICLE INTO POLE",
+    "load_cell_barrier_family": "side_pole_load_cell_barrier",
+    "load_cell_barrier_classification_id": "side_pole_load_cell_8"
+  },
+  "hard_excluded_test_no": [
+    "15452"
+  ],
+  "top_makes": [
+    {
+      "value": "FORD",
+      "count": 62
+    },
+    {
+      "value": "TOYOTA",
+      "count": 62
+    },
+    {
+      "value": "CHEVROLET",
+      "count": 49
+    },
+    {
+      "value": "NISSAN",
+      "count": 43
+    },
+    {
+      "value": "KIA",
+      "count": 35
+    },
+    {
+      "value": "HYUNDAI",
+      "count": 35
+    },
+    {
+      "value": "HONDA",
+      "count": 29
+    },
+    {
+      "value": "MAZDA",
+      "count": 18
+    },
+    {
+      "value": "JEEP",
+      "count": 17
+    },
+    {
+      "value": "LEXUS",
+      "count": 17
+    },
+    {
+      "value": "ACURA",
+      "count": 16
+    },
+    {
+      "value": "VOLKSWAGEN",
+      "count": 16
+    }
+  ],
+  "top_body_styles": [
+    {
+      "value": "UTILITY VEHICLE",
+      "count": 243
+    },
+    {
+      "value": "FOUR DOOR SEDAN",
+      "count": 154
+    },
+    {
+      "value": "4 DOOR PICKUP",
+      "count": 44
+    },
+    {
+      "value": "FIVE DOOR HATCHBACK",
+      "count": 40
+    },
+    {
+      "value": "EXTENDED CAB PICKUP",
+      "count": 22
+    },
+    {
+      "value": "TWO DOOR COUPE",
+      "count": 17
+    },
+    {
+      "value": "MINIVAN",
+      "count": 15
+    },
+    {
+      "value": "THREE DOOR HATCHBACK",
+      "count": 5
+    },
+    {
+      "value": "TRUCK",
+      "count": 3
+    },
+    {
+      "value": "STATION WAGON",
+      "count": 3
+    },
+    {
+      "value": "VAN",
+      "count": 2
+    },
+    {
+      "value": "PICKUP TRUCK",
+      "count": 2
+    }
+  ],
+  "model_year_distribution": [
+    {
+      "value": "2012",
+      "count": 62
+    },
+    {
+      "value": "2013",
+      "count": 48
+    },
+    {
+      "value": "2014",
+      "count": 46
+    },
+    {
+      "value": "2016",
+      "count": 44
+    },
+    {
+      "value": "2015",
+      "count": 43
+    },
+    {
+      "value": "2019",
+      "count": 43
+    },
+    {
+      "value": "2020",
+      "count": 39
+    },
+    {
+      "value": "2024",
+      "count": 36
+    },
+    {
+      "value": "2023",
+      "count": 35
+    },
+    {
+      "value": "2018",
+      "count": 33
+    },
+    {
+      "value": "2022",
+      "count": 30
+    },
+    {
+      "value": "2021",
+      "count": 29
+    },
+    {
+      "value": "2017",
+      "count": 28
+    },
+    {
+      "value": "2025",
+      "count": 21
+    },
+    {
+      "value": "2011",
+      "count": 14
+    },
+    {
+      "value": "2026",
+      "count": 3
+    }
+  ]
+}

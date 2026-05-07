@@ -1,0 +1,62 @@
+version: 0.1.0
+pipeline:
+  - step: validate_baseline
+    gate: G0_metadata_baseline
+    command: python .harness/scripts/validate_baseline.py --csv data/source/side_loadcell_filtered_tests.csv --sqlite data/source/nhtsa_gui.sqlite --out artifacts/harness/baseline_validation.json
+    outputs:
+      - artifacts/harness/baseline_validation.json
+
+  - step: build_cohort
+    gate: G0_metadata_baseline
+    command: python .harness/scripts/build_cohort.py --csv data/source/side_loadcell_filtered_tests.csv --out data/processed/side_pole_vtp_cohort.csv --exclusions data/processed/excluded_tests.csv --summary artifacts/harness/cohort_summary.json
+    outputs:
+      - data/processed/side_pole_vtp_cohort.csv
+      - data/processed/excluded_tests.csv
+      - artifacts/harness/cohort_summary.json
+
+  - step: profile_metadata
+    gate: G0_metadata_baseline
+    command: python .harness/scripts/profile_metadata.py --cohort data/processed/side_pole_vtp_cohort.csv --out artifacts/harness/metadata_profile.json
+    outputs:
+      - artifacts/harness/metadata_profile.json
+
+  - step: raw_asset_inventory
+    gate: G1_raw_asset_inventory
+    command: manual_or_project_specific_ingestion
+    outputs:
+      - data/processed/raw_asset_inventory.csv
+      - artifacts/harness/raw_asset_coverage.json
+
+  - step: channel_dictionary
+    gate: G2_channel_dictionary
+    command: project_specific_channel_parser
+    outputs:
+      - data/processed/channel_dictionary.csv
+      - artifacts/harness/channel_dictionary_qa.json
+
+  - step: signal_processing
+    gate: G3_signal_qa
+    command: project_specific_signal_pipeline
+    outputs:
+      - data/derived/loadcell_metrics.csv
+      - data/derived/vehicle_deceleration_metrics.csv
+      - artifacts/harness/signal_qa_summary.json
+
+  - step: validate_signal_metrics
+    gate: G4_metrics
+    command: python .harness/scripts/validate_signal_metrics.py --loadcell data/derived/loadcell_metrics.csv --vehicle data/derived/vehicle_deceleration_metrics.csv --out artifacts/harness/metrics_schema_validation.json
+    outputs:
+      - artifacts/harness/metrics_schema_validation.json
+
+  - step: energy_mapping
+    gate: G5_energy_mapping
+    command: project_specific_energy_mapping_pipeline
+    outputs:
+      - data/derived/member_energy_estimates.csv
+      - artifacts/harness/energy_mapping_qa.json
+
+  - step: readiness_report
+    gate: G6_benchmark_reporting
+    command: python .harness/scripts/make_readiness_report.py --baseline artifacts/harness/baseline_validation.json --cohort artifacts/harness/cohort_summary.json --profile artifacts/harness/metadata_profile.json --out reports/project_readiness_report.md
+    outputs:
+      - reports/project_readiness_report.md

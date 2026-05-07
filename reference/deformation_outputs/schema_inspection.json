@@ -1,0 +1,2433 @@
+{
+  "db_path": "D:\\vscode\\nhtsa_metadata\\data\\full_2011plus_metadata_only_refresh_2026-05-03.sqlite",
+  "tables": {
+    "asset_summary": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "asset_kind",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "asset_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "barriers": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "rigidity",
+        "type": "TEXT"
+      },
+      {
+        "name": "shape",
+        "type": "TEXT"
+      },
+      {
+        "name": "angle_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "angle",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "source_barrier_no",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "canonical_label_registry": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "canonical_label",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "registry_version",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "label_domain",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "label_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "definition",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_rule_id",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "canonical_row_sources": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "table_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "row_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "confidence",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "classification_adjudication": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "canonical_test_uid",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "classifier_version",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "classification_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "disposition_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "adjudication_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "final_label",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "recommended_rule_id",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "adjudication_reason",
+        "type": "TEXT"
+      },
+      {
+        "name": "recommended_action",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "evidence_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "classification_evidence": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_system",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "canonical_test_uid",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "classifier_version",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "evidence_stage",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_field_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "normalized_feature_key",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "candidate_rule_id",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "final_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "disposition_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "evidence_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "classification_feature_evidence": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "canonical_test_uid",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "classifier_version",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "normalized_text",
+        "type": "TEXT"
+      },
+      {
+        "name": "normalized_features_json",
+        "type": "JSON"
+      },
+      {
+        "name": "source_payload_ids_json",
+        "type": "JSON"
+      },
+      {
+        "name": "source_field_paths_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extraction_warnings_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "code_values": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "code_set",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "code_value",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "normalized_value",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "description",
+        "type": "TEXT"
+      },
+      {
+        "name": "first_seen_test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "seen_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "collection_run_items": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "run_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "endpoint_statuses_json",
+        "type": "JSON"
+      },
+      {
+        "name": "error_json",
+        "type": "JSON"
+      },
+      {
+        "name": "started_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "finished_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "collection_runs": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "run_uuid",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "source",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "mode",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "database_url_sanitized",
+        "type": "TEXT"
+      },
+      {
+        "name": "allow_live",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "started_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "finished_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "options_json",
+        "type": "JSON"
+      },
+      {
+        "name": "error_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "deformation_measurements": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "vehicle_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "measurement_code",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_value",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "numeric_value",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "unit_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "parse_status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "discovery_authority_decisions": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "decision_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "decision_status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "selected_authority",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "live_manifest_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "reference_seed_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "reference_only_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "validated_supplement_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "excluded_supplement_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "final_manifest_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "decision_reason",
+        "type": "TEXT"
+      },
+      {
+        "name": "decided_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "git_commit",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "discovery_manifest_rows": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "discovery_run_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_date_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "test_date",
+        "type": "DATE"
+      },
+      {
+        "name": "test_date_parse_status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "scope_status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "test_configuration",
+        "type": "TEXT"
+      },
+      {
+        "name": "test_configuration_key",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "test_type",
+        "type": "TEXT"
+      },
+      {
+        "name": "model_year",
+        "type": "INTEGER"
+      },
+      {
+        "name": "vehicle_make",
+        "type": "TEXT"
+      },
+      {
+        "name": "vehicle_model",
+        "type": "TEXT"
+      },
+      {
+        "name": "seed_source",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "live_by_search_present",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "reference_present",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "live_validation_present",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "validation_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "validation_endpoint",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "authority_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "selection_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "rejection_reason",
+        "type": "TEXT"
+      },
+      {
+        "name": "row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "discovery_runs": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "run_kind",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "source_authority",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "min_test_date",
+        "type": "DATE"
+      },
+      {
+        "name": "year_from",
+        "type": "INTEGER"
+      },
+      {
+        "name": "year_to",
+        "type": "INTEGER"
+      },
+      {
+        "name": "reference_database_path_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "command_json",
+        "type": "JSON"
+      },
+      {
+        "name": "manifest_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "manifest_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "started_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "ended_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "total_rows",
+        "type": "INTEGER"
+      },
+      {
+        "name": "in_scope_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "out_of_scope_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "duplicate_test_no_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "missing_date_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "parse_failed_date_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "date_range_start",
+        "type": "DATE"
+      },
+      {
+        "name": "date_range_end",
+        "type": "DATE"
+      },
+      {
+        "name": "git_commit",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "software_version",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "field_coverage_snapshots": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "run_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "snapshot_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "impact_device_evidence": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "device_type",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "evidence_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "injury_metrics": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "occupant_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "metric_code",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_value",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "numeric_value",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "unit_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "parse_status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "instrumentation_channel_details": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "channel_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "detail_json",
+        "type": "JSON"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "instrumentation_channels": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "curve_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "sensor_type",
+        "type": "TEXT"
+      },
+      {
+        "name": "sensor_location",
+        "type": "TEXT"
+      },
+      {
+        "name": "sensor_attachment",
+        "type": "TEXT"
+      },
+      {
+        "name": "sensor_axis",
+        "type": "TEXT"
+      },
+      {
+        "name": "unit_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "first_point",
+        "type": "INTEGER"
+      },
+      {
+        "name": "last_point",
+        "type": "INTEGER"
+      },
+      {
+        "name": "time_increment",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "channel_status",
+        "type": "TEXT"
+      },
+      {
+        "name": "data_status",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "intrusion_measurements": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "vehicle_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "measurement_code",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_value",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "numeric_value",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "unit_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "parse_status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "media_assets": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "asset_kind",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "asset_subtype",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "source_url",
+        "type": "TEXT"
+      },
+      {
+        "name": "canonical_url_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "file_ext",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "suggested_filename",
+        "type": "TEXT"
+      },
+      {
+        "name": "content_type",
+        "type": "TEXT"
+      },
+      {
+        "name": "size_bytes",
+        "type": "INTEGER"
+      },
+      {
+        "name": "title",
+        "type": "TEXT"
+      },
+      {
+        "name": "description",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "occupants": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "vehicle_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_vehicle_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "occupant_location_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "occupant_location_normalized",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "seat_position",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "occupant_type",
+        "type": "TEXT"
+      },
+      {
+        "name": "dummy_type",
+        "type": "TEXT"
+      },
+      {
+        "name": "sex",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "size_percentile",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "age_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "age",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "height_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "height",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "weight_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "weight",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "contact_points_json",
+        "type": "JSON"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "program_standard_evidence": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "program_domain",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "standard_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "evidence_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "restraint_equipment_evidence": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "equipment_type",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "evidence_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "restraints": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "vehicle_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "occupant_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_vehicle_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "occupant_location_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "occupant_location_normalized",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "restraint_subject_kind",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "restraint_subject_semantic_key",
+        "type": "TEXT"
+      },
+      {
+        "name": "restraint_subject_semantic_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "restraint_type",
+        "type": "TEXT"
+      },
+      {
+        "name": "deployment_status",
+        "type": "TEXT"
+      },
+      {
+        "name": "semantic_key",
+        "type": "TEXT"
+      },
+      {
+        "name": "semantic_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "rule_registry": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "rule_id",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "rule_version",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "canonical_label",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "rule_family_id",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "rule_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "evidence_gates_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "source_conflicts": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "conflict_type",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "field_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_payload_id_a",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_payload_id_b",
+        "type": "INTEGER"
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "details_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "source_endpoints": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "path_template",
+        "type": "TEXT"
+      },
+      {
+        "name": "endpoint_group",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "is_paginated",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "required_for_baseline",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "allow_empty",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "parser_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "source_field_catalog": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "field_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "observed_type",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "first_seen_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "last_seen_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "seen_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "non_null_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "mapping_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "mapped_table",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "mapped_column",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "example_values_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "source_payload_observations": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "run_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "run_item_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "observed_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "http_status",
+        "type": "INTEGER"
+      },
+      {
+        "name": "elapsed_ms",
+        "type": "INTEGER"
+      },
+      {
+        "name": "response_size_bytes",
+        "type": "INTEGER"
+      },
+      {
+        "name": "request_headers_json",
+        "type": "JSON"
+      },
+      {
+        "name": "response_headers_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "source_payload_sections": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "json_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "row_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "section_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "sample_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "source_payloads": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "endpoint_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "vehicle_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "occupant_location_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "curve_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "page_number",
+        "type": "INTEGER"
+      },
+      {
+        "name": "request_url",
+        "type": "TEXT"
+      },
+      {
+        "name": "canonical_url_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "http_status",
+        "type": "INTEGER"
+      },
+      {
+        "name": "api_status",
+        "type": "INTEGER"
+      },
+      {
+        "name": "api_message",
+        "type": "TEXT"
+      },
+      {
+        "name": "api_error",
+        "type": "TEXT"
+      },
+      {
+        "name": "pagination_json",
+        "type": "JSON"
+      },
+      {
+        "name": "count_returned",
+        "type": "INTEGER"
+      },
+      {
+        "name": "total_available",
+        "type": "INTEGER"
+      },
+      {
+        "name": "payload_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "payload_json",
+        "type": "JSON"
+      },
+      {
+        "name": "fetched_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "test_classification": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_test_configuration_key",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "source_test_configuration",
+        "type": "TEXT"
+      },
+      {
+        "name": "impact_angle",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "impact_direction",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "counterparty_kind",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "test_family",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "classification_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "disposition_status",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "canonical_label",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "canonical_rule_id",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "rule_family_id",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "specificity_level",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "confidence",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "classification_run_id",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "evidence_summary_json",
+        "type": "JSON"
+      }
+    ],
+    "test_classification_candidates": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "classifier_version",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "rank",
+        "type": "INTEGER"
+      },
+      {
+        "name": "rule_id",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "canonical_rule_id",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "rule_family_id",
+        "type": "VARCHAR(160)"
+      },
+      {
+        "name": "program_domain",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "specificity_level",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "priority",
+        "type": "INTEGER"
+      },
+      {
+        "name": "score",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "matched_evidence_json",
+        "type": "JSON"
+      },
+      {
+        "name": "fallback_used",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "alias_used",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "test_event_domain": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "domain_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "domain_confidence",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "evidence_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "test_facets": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "facet_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "facet_value",
+        "type": "TEXT"
+      },
+      {
+        "name": "test_count",
+        "type": "INTEGER"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "test_filter_summary": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_type",
+        "type": "TEXT"
+      },
+      {
+        "name": "test_configuration",
+        "type": "TEXT"
+      },
+      {
+        "name": "test_date",
+        "type": "DATE"
+      },
+      {
+        "name": "model_year_min",
+        "type": "INTEGER"
+      },
+      {
+        "name": "model_year_max",
+        "type": "INTEGER"
+      },
+      {
+        "name": "vehicle_makes_json",
+        "type": "JSON"
+      },
+      {
+        "name": "vehicle_models_json",
+        "type": "JSON"
+      },
+      {
+        "name": "participant_kinds_json",
+        "type": "JSON"
+      },
+      {
+        "name": "asset_kinds_json",
+        "type": "JSON"
+      },
+      {
+        "name": "has_uds_or_tdms_package",
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "test_participants": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "participant_kind",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "vehicle_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "barrier_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_vehicle_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "display_name",
+        "type": "TEXT"
+      },
+      {
+        "name": "classification_reason",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "tests": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_reference_no",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "test_type",
+        "type": "TEXT"
+      },
+      {
+        "name": "test_date_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "test_date",
+        "type": "DATE"
+      },
+      {
+        "name": "test_date_parse_status",
+        "type": "VARCHAR(32)"
+      },
+      {
+        "name": "test_performer",
+        "type": "TEXT"
+      },
+      {
+        "name": "contractor_study_title",
+        "type": "TEXT"
+      },
+      {
+        "name": "test_configuration",
+        "type": "TEXT"
+      },
+      {
+        "name": "test_configuration_key",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "impact_angle_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "impact_angle",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "offset_distance_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "offset_distance",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "closing_speed_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "closing_speed",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ],
+    "vehicles": [
+      {
+        "name": "id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "test_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_vehicle_no",
+        "type": "INTEGER"
+      },
+      {
+        "name": "make",
+        "type": "TEXT"
+      },
+      {
+        "name": "model",
+        "type": "TEXT"
+      },
+      {
+        "name": "model_year",
+        "type": "INTEGER"
+      },
+      {
+        "name": "engine_type",
+        "type": "TEXT"
+      },
+      {
+        "name": "vehicle_speed_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "vehicle_speed",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "vehicle_test_weight_raw",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "vehicle_test_weight",
+        "type": "NUMERIC"
+      },
+      {
+        "name": "source_payload_id",
+        "type": "INTEGER"
+      },
+      {
+        "name": "source_endpoint_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_section_name",
+        "type": "VARCHAR(120)"
+      },
+      {
+        "name": "source_row_path",
+        "type": "TEXT"
+      },
+      {
+        "name": "source_row_hash",
+        "type": "VARCHAR(64)"
+      },
+      {
+        "name": "raw_row_json",
+        "type": "JSON"
+      },
+      {
+        "name": "extra_json",
+        "type": "JSON"
+      },
+      {
+        "name": "created_at",
+        "type": "DATETIME"
+      },
+      {
+        "name": "updated_at",
+        "type": "DATETIME"
+      }
+    ]
+  }
+}

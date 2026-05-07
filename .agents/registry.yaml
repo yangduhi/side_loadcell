@@ -1,0 +1,62 @@
+project: nhtsa_side_impact_loadcell_analysis
+version: 0.1.0
+date: 2026-05-07
+language: ko-KR
+objective: >
+  NHTSA 측면 폴 충돌 시험의 로드셀 배리어 force-time, 차체 감가속도,
+  차량 제원을 결합하여 하중 분포, 에너지 흡수량, 제조사·모델별 구조 응답을 분석한다.
+
+canonical_inputs:
+  project_plan: docs/NHTSA_side_impact_project_plan.docx
+  source_csv: data/source/side_loadcell_filtered_tests.csv
+  sqlite_metadata: data/source/nhtsa_gui.sqlite
+  raw_time_history_dir: data/raw/time_history
+  raw_asset_dir: data/raw/assets
+
+canonical_outputs:
+  cohort_csv: data/processed/side_pole_vtp_cohort.csv
+  channel_dictionary: data/processed/channel_dictionary.csv
+  signal_metrics: data/derived/signal_metrics.csv
+  loadcell_metrics: data/derived/loadcell_metrics.csv
+  vehicle_deceleration_metrics: data/derived/vehicle_deceleration_metrics.csv
+  member_energy_estimates: data/derived/member_energy_estimates.csv
+  benchmark_tables: data/derived/manufacturer_model_benchmarks.csv
+  readiness_report: reports/project_readiness_report.md
+
+agents:
+  - id: project_director
+    file: .agents/00_project_director.md
+    gate_owner: [G0, G1, G2, G3, G4, G5, G6]
+    handoff_to: data_contract_auditor
+  - id: data_contract_auditor
+    file: .agents/01_data_contract_auditor.md
+    gate_owner: [G0]
+    handoff_to: raw_time_history_ingestion
+  - id: raw_time_history_ingestion
+    file: .agents/02_raw_time_history_ingestion.md
+    gate_owner: [G1]
+    handoff_to: channel_dictionary_normalizer
+  - id: channel_dictionary_normalizer
+    file: .agents/03_channel_dictionary_normalizer.md
+    gate_owner: [G2]
+    handoff_to: signal_processing_qa
+  - id: signal_processing_qa
+    file: .agents/04_signal_processing_qa.md
+    gate_owner: [G3, G4]
+    handoff_to: loadcell_energy_mapper
+  - id: loadcell_energy_mapper
+    file: .agents/05_loadcell_energy_mapper.md
+    gate_owner: [G4, G5]
+    handoff_to: vehicle_benchmark_analyst
+  - id: vehicle_benchmark_analyst
+    file: .agents/06_vehicle_benchmark_analyst.md
+    gate_owner: [G6]
+    handoff_to: report_dashboard_builder
+  - id: report_dashboard_builder
+    file: .agents/07_report_dashboard_builder.md
+    gate_owner: [G6]
+    handoff_to: harness_regression_engineer
+  - id: harness_regression_engineer
+    file: .agents/08_harness_regression_engineer.md
+    gate_owner: [G0, G1, G2, G3, G4, G5, G6]
+    handoff_to: project_director

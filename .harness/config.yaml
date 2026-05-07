@@ -1,0 +1,88 @@
+project:
+  name: nhtsa_side_impact_loadcell_analysis
+  version: 0.1.0
+  plan_doc: docs/NHTSA_side_impact_project_plan.docx
+  timezone: Asia/Seoul
+
+paths:
+  source_csv: data/source/side_loadcell_filtered_tests.csv
+  sqlite_metadata: data/source/nhtsa_gui.sqlite
+  raw_time_history_dir: data/raw/time_history
+  raw_asset_dir: data/raw/assets
+  processed_dir: data/processed
+  derived_dir: data/derived
+  harness_artifact_dir: artifacts/harness
+  reports_dir: reports
+
+cohort:
+  authority: side_loadcell_filtered_tests.csv
+  expected_source_rows: 555
+  expected_recommended_rows: 554
+  exclude_test_no:
+    - 15452
+  include_filters:
+    crash_type_rule: side
+    test_config_code: VTP
+    test_config_label: VEHICLE INTO POLE
+    load_cell_barrier_family: side_pole_load_cell_barrier
+    load_cell_barrier_classification_id: side_pole_load_cell_8
+  notes:
+    - SQLite may contain a broader side_pole_load_cell_8 inventory than the filtered CSV.
+    - Use CSV as initial cohort authority until reconciliation scope is explicitly changed.
+
+units:
+  force: N
+  acceleration: m/s^2
+  velocity: m/s
+  displacement: m
+  energy: J
+  time: s
+  mass: kg
+  length: mm
+
+signal_processing:
+  default_time_zero_method: first_total_force_threshold
+  force_threshold_n: 500.0
+  pre_impact_baseline_window_s: [-0.020, -0.002]
+  integration_window_s: [0.000, 0.160]
+  force_positive_direction: toward_vehicle
+  acceleration_positive_direction: document_by_channel_dictionary
+  filtering:
+    require_filter_metadata: true
+    default_force_filter: project_default_to_be_confirmed_by_channel_dictionary
+    default_acceleration_filter: project_default_to_be_confirmed_by_channel_dictionary
+  drift_correction:
+    required: true
+    allowed_methods:
+      - pre_post_event_velocity_constraint
+      - impact_speed_constraint
+      - documented_external_reference
+
+energy_mapping:
+  result_type: engineering_estimate
+  require_cell_layout: true
+  require_member_mapping: true
+  confidence_levels: [high, medium, low, blocked]
+  default_confidence_without_visual_validation: low
+  member_groups:
+    - b_pillar
+    - rocker_sill
+    - door_outer_inner
+    - floor_cross_member
+    - roof_rail
+    - seat_cross_member
+    - unknown
+
+benchmark:
+  minimum_group_n_for_rank: 5
+  stratification_fields:
+    - body_style_group
+    - test_weight_kg_bin
+    - model_year_bin
+    - impact_speed_mps_bin
+  control_fields:
+    - test_weight_kg
+    - width_mm
+    - wheelbase_mm
+    - vax_crush_distance_mm
+    - impact_speed_mps

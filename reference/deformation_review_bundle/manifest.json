@@ -1,0 +1,90 @@
+{
+  "bundle_name": "mdca_review_bundle",
+  "generated_at_utc": "2026-05-04T06:17:16.336144+00:00",
+  "source_db": "D:\\vscode\\nhtsa_metadata\\data\\full_2011plus_metadata_only_refresh_2026-05-03.sqlite",
+  "source_output_dir": "D:\\vscode\\nhtsa_metadata_deformation\\outputs\\deformation",
+  "analysis_branch": "codex/mdca-analysis",
+  "head_commit": "622cb8a",
+  "outputs": [
+    {
+      "file": "deformation_vehicle_features.csv",
+      "rows": 1944,
+      "columns": 62,
+      "bytes": 3327842,
+      "sha256": "af283523dcbc3a68c5dfd2309c37b80b6f58d55871dc5127126f843fc4757d5a",
+      "modified_utc": "2026-05-04T02:43:58.040380+00:00"
+    },
+    {
+      "file": "deformation_profile_points.csv",
+      "rows": 11612,
+      "columns": 17,
+      "bytes": 1712812,
+      "sha256": "256d36fee1081f8f6d313166b0bae30cda255d1b0d36760244e7c7a9c6b34f91",
+      "modified_utc": "2026-05-04T02:43:57.935838+00:00"
+    },
+    {
+      "file": "deformation_quality_audit.csv",
+      "rows": 4705,
+      "columns": 24,
+      "bytes": 485313,
+      "sha256": "d66ff8d5ff092f393fd0cf8a36191ab619040f5b5c1d2a02f8abaec780016cc4",
+      "modified_utc": "2026-05-04T02:43:58.083898+00:00"
+    },
+    {
+      "file": "deformation_family_summary.csv",
+      "rows": 4,
+      "columns": 162,
+      "bytes": 11976,
+      "sha256": "72df1654201b6bb2d5826f69ed1517d6ba30f5e43383994a3681cd55c2ca9cf4",
+      "modified_utc": "2026-05-04T02:43:58.085896+00:00"
+    },
+    {
+      "file": "deformation_outlier_cases.csv",
+      "rows": 2041,
+      "columns": 15,
+      "bytes": 287846,
+      "sha256": "c0a91c420015169545a3adedffb24d71e8c56cb0e59df4814f6fa8d5022dd4c1",
+      "modified_utc": "2026-05-04T02:43:58.100896+00:00"
+    }
+  ],
+  "sqlite_tables": [
+    {
+      "table": "deformation_vehicle_features",
+      "rows": 1944,
+      "columns": 62
+    },
+    {
+      "table": "deformation_profile_points",
+      "rows": 11612,
+      "columns": 17
+    },
+    {
+      "table": "deformation_quality_audit",
+      "rows": 4705,
+      "columns": 24
+    },
+    {
+      "table": "deformation_family_summary",
+      "rows": 4,
+      "columns": 162
+    },
+    {
+      "table": "deformation_outlier_cases",
+      "rows": 2041,
+      "columns": 15
+    }
+  ],
+  "key_counts": {
+    "target_subject_vehicle_rows": 1944,
+    "ab_profile_capable_rows": 1705,
+    "rear_rows": 42,
+    "rear_ab_rows": 14,
+    "target_crhdst_dpd_disagreement_rows": 30
+  },
+  "sqlite_file": {
+    "file": "deformation_review.sqlite",
+    "path": "D:\\vscode\\nhtsa_metadata_deformation\\outputs\\deformation_review.sqlite",
+    "bytes": 6684672,
+    "sha256": "97ffe709a5ae4ca437bc6014b438fca1c5e9c58745ffcd9499e7ddeb705d9e59"
+  }
+}

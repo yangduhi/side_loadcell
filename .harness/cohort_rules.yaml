@@ -1,0 +1,52 @@
+version: 0.1.0
+source: side_loadcell_filtered_tests.csv
+
+required_columns:
+  - test_no
+  - model_year
+  - make
+  - model
+  - body_style
+  - crash_type
+  - crash_type_rule
+  - test_config_code
+  - test_config_label
+  - impact_speed_value
+  - impact_speed_unit
+  - load_cell_barrier_family
+  - load_cell_barrier_classification_id
+  - load_cell_barrier_config_version
+  - test_weight_kg
+  - curb_weight_kg
+  - length_mm
+  - width_mm
+  - wheelbase_mm
+  - vax_crush_distance_mm
+
+expected:
+  source_rows: 555
+  source_unique_test_no: 555
+  recommended_cohort_rows: 554
+  excluded_rows: 1
+  excluded_test_no:
+    - 15452
+
+include_filters:
+  crash_type_rule: side
+  test_config_code: VTP
+  test_config_label: VEHICLE INTO POLE
+  load_cell_barrier_family: side_pole_load_cell_barrier
+  load_cell_barrier_classification_id: side_pole_load_cell_8
+  impact_speed_unit: km/h
+
+exclusion_rules:
+  - rule_id: EXCLUDE_NON_SIDE_POLE_15452
+    test_no: 15452
+    reason: ITV impactor into vehicle; frontal_or_flat_load_cell_wall; advanced_11x16_176_full; not side_pole_load_cell_8 VTP cohort.
+    severity: hard_exclude_for_baseline
+
+reconciliation_policy:
+  csv_is_initial_cohort_authority: true
+  sqlite_is_metadata_support: true
+  sqlite_broader_inventory_warning: true
+  require_explicit_scope_change_to_add_sqlite_only_tests: true

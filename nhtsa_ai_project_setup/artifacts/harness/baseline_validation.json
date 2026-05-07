@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1.0",
+  "generated_at_utc": "2026-05-07T04:01:15.226899+00:00",
+  "status": "pass_with_known_blockers",
+  "csv_path": "data/source/side_loadcell_filtered_tests.csv",
+  "sqlite_path": "data/source/nhtsa_gui.sqlite",
+  "checks": [
+    {
+      "id": "csv_required_columns",
+      "status": "pass",
+      "observed_columns": [
+        "test_no",
+        "model_year",
+        "make",
+        "model",
+        "body_style",
+        "crash_type",
+        "crash_type_rule",
+        "test_config_code",
+        "test_config_label",
+        "impact_speed_value",
+        "impact_speed_unit",
+        "load_cell_barrier_family",
+        "load_cell_barrier_classification_id",
+        "load_cell_barrier_config_version",
+        "test_weight_kg",
+        "curb_weight_kg",
+        "length_mm",
+        "width_mm",
+        "wheelbase_mm",
+        "vax_crush_distance_mm"
+      ],
+      "missing_columns": []
+    },
+    {
+      "id": "csv_source_row_count",
+      "expected": 555,
+      "observed": 555,
+      "status": "pass"
+    },
+    {
+      "id": "csv_unique_test_no",
+      "expected": 555,
+      "observed": 555,
+      "status": "pass"
+    },
+    {
+      "id": "excluded_test_no_present",
+      "expected": [
+        "15452"
+      ],
+      "observed": [
+        "15452"
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "recommended_cohort_count",
+      "expected": 554,
+      "observed": 554,
+      "filters": {
+        "crash_type_rule": "side",
+        "test_config_code": "VTP",
+        "test_config_label": "VEHICLE INTO POLE",
+        "load_cell_barrier_family": "side_pole_load_cell_barrier",
+        "load_cell_barrier_classification_id": "side_pole_load_cell_8"
+      },
+      "excluded_test_no": [
+        "15452"
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "sqlite_required_tables",
+      "status": "pass",
+      "missing_tables": [],
+      "table_counts": {
+        "alembic_version": 1,
+        "barriers": 1634,
+        "code_values": 0,
+        "collection_runs": 2,
+        "download_attempts": 0,
+        "download_jobs": 0,
+        "files": 0,
+        "injury_metrics": 0,
+        "instrumentation_channels": 0,
+        "intrusions": 0,
+        "occupants": 0,
+        "restraints": 0,
+        "source_payloads": 7800,
+        "tests": 3900,
+        "vehicles": 4705
+      }
+    },
+    {
+      "id": "sqlite_broader_side_pole_inventory",
+      "observed": 580,
+      "status": "warn",
+      "note": "SQLite may contain broader inventory than the filtered CSV. CSV remains initial cohort authority."
+    }
+  ],
+  "warnings": [
+    "SQLite injury_metrics table has 0 rows; occupant injury metrics are outside current baseline.",
+    "SQLite intrusions table has 0 rows; intrusion validation is outside current baseline.",
+    "SQLite VTP side_pole_load_cell_8 inventory count is 580, while filtered CSV recommended cohort is 554. Reconcile only if project scope changes."
+  ],
+  "blockers": [
+    "SQLite files table has 0 rows; raw asset inventory is not loaded.",
+    "SQLite instrumentation_channels table has 0 rows; channel-level time-history metadata is not loaded."
+  ],
+  "next_gate": "G1_raw_asset_inventory"
+}
