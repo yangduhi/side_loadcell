@@ -2,11 +2,33 @@
 
 Side/load-cell analysis workspace split from `D:\vscode\nhtsa_metadata_deformation`.
 
+## Development Setup
+
+This workspace has been initialized with the AI project setup surfaces from
+`nhtsa_ai_project_setup`:
+
+- `.agents/`: role-based operating instructions
+- `.skills/`: repeatable analysis and QA procedures
+- `.harness/`: local validation, cohort reproduction, quality gates, and smoke tests
+
+Local Python setup uses `.venv` and `.env`. The default editor interpreter is configured in
+`.vscode/settings.json`.
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -U pip
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
+.\scripts\verify.ps1
+```
+
+`scripts\verify.ps1` runs the local read-only baseline checks, rebuilds the 554-test cohort,
+writes `reports\project_readiness_report.md`, and runs `.harness/tests`.
+
 ## Source Inputs
 
 - `D:\vscode\nhtsa_metadata\data\refactor_validation_filter_ready_2026-05-07.sqlite`
-  - External source DB used by `scripts\build_side_pole_analysis_ready.py`.
-  - Not copied into this project.
+  - Original source path for the local copy at `data/refactor_validation_filter_ready_2026-05-07.sqlite`.
+  - Used by `scripts\build_side_pole_analysis_ready.py`.
 - `data/side_loadcell_filtered_tests.csv`
   - Authoritative 555-row filtered scope source.
 - `data/side_pole_load_cell_channel_availability_2026-05-07.csv`

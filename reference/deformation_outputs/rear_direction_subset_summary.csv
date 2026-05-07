@@ -1,2 +1,0 @@
-impact_family,total_rear_rows,rear_ab_rows,rear_damage_high_confidence_rows,rear_direction_uncertain_rows,rear_x_rows,notes
-rear,42,14,8,6,28,High-confidence rear damage uses a conservative PDOF/VDI heuristic; full CDC decoding is out of scope for this targeted correction.

@@ -5,10 +5,10 @@
 This project was initialized as a side/load-cell analysis workspace split from
 `D:\vscode\nhtsa_metadata_deformation`.
 
-The imported assets preserve two surfaces:
+The retained assets preserve two surfaces:
 
-1. Full metadata and load-cell classification evidence from `D:\vscode\nhtsa_metadata`.
-2. Deformation feature and review outputs from `D:\vscode\nhtsa_metadata_deformation`.
+1. The 554-test side/load-cell analysis scope from `data/side_loadcell_filtered_tests.csv`.
+2. Metadata-derived side-pole load-cell and VEHICLE CG channel inventory needed before waveform analysis.
 
 ## Current Data Files
 
@@ -17,7 +17,7 @@ The imported assets preserve two surfaces:
 | `data/side_loadcell_filtered_tests.csv` | Existing filtered test scope | 142,178 | Authoritative filtered scope source |
 | `data/side_pole_load_cell_channel_availability_2026-05-07.csv` | Existing side-pole availability export | 577,393 | Side-pole channel availability source |
 | `data/side_pole_load_cell_and_acceleration_channel_names_2026-05-07.json` | Existing metadata-derived channel inventory | 30,162,047 | Channel inventory source |
-| `data/side_pole_analysis_ready_2026-05-07.sqlite` | Generated from filtered tests, imported DBs, and metadata media links | 47,554,560 | Final 554-test analysis-ready DB |
+| `data/side_pole_analysis_ready_2026-05-07.sqlite` | Generated from filtered tests, channel inventory, and external metadata DB media links | 47,554,560 | Final 554-test analysis-ready DB |
 | `data/side_pole_analysis_ready_2026-05-07.json` | Exported from `side_pole_analysis_ready_2026-05-07.sqlite` | 6,637,674 | Analysis-ready JSON export with compact download links |
 
 ## Source Selection
@@ -75,20 +75,9 @@ Generated analysis-ready JSON:
 - Includes only `data_package` and `report` download links.
 - Full photo/video/other media links remain in the SQLite `download_links` table.
 
-## Seed DB Notes
+## Authority Notes
 
-`data/side_loadcell_seed.sqlite` is a convenience DB only. It does not replace the imported
-source DBs.
-
-It contains:
-
-- `source_file_inventory`
-- `loadcell_classification_summary`
-- `loadcell_test_family_summary`
-- `side_loadcell_overlap_summary`
-- `side_loadcell_tests`
-- `side_pole_vehicle_specs`
-- `vehicle_spec_field_coverage`
-
-The source DB remains the authority for raw metadata, barrier rows, and instrumentation
-channels. The deformation feature DB remains the authority for derived MDCA feature rows.
+The external metadata DB remains the authority for raw metadata, barrier rows,
+instrumentation channels, vehicle specs, and media/download links. This project keeps only the
+filtered scope files and the generated analysis-ready SQLite/JSON outputs required for
+side-pole load-cell analysis preparation.
